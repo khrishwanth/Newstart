@@ -1,3 +1,4 @@
-export default function Tokendatabase(){
-    let token_db = [];
+export let token_db = [];
+export function update_tokendb(props){
+    token_db.push(props);
 }
