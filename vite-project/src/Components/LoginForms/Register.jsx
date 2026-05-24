@@ -12,18 +12,21 @@ export default function RegisterNewUser(){
     function handlepswd(e){
         setPswd(e.target.value);
     }
-    function updateDb(e){
+    function handlesumbit(e){
         e.preventDefault();
+    }
+
+    function updateUserdb(){
         const newUser = {user , pswd};
         update_userdb(newUser);
     }
 
         return (
       <>
-        <form onSubmit={updateDb}>
-         <input type="text" value={user} id="user">Enter the username</input>
-         <input type="password" value={pswd} id="pswd">Enter the password</input>
-         <button type="submit">Submit</button>
+        <form onSubmit={handlesumbit}>
+         <input type="text" value={user} id="user" onChange={handleuser} placeholder="username" />
+         <input type="password" value={pswd} id="pswd" onChange={handlepswd} placeholder="password" />
+         <button type="submit" onClick={updateUserdb}>Submit</button>
         </form>
       </>
     )
