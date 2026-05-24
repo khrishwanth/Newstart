@@ -5,6 +5,6 @@ import Start from './App.jsx'
 import Init from './Init.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Start/>
+    < Start />
   </StrictMode>
 )

@@ -1,11 +1,11 @@
-import { update_tokendb , token_db } from "../../Databases/TokenDb";
+import { token_db, update_tokendb } from "../../Databases/TokenDb";
 
- export default function GenerateToken(props){
+ export function GenerateToken(props){
      const token = Math.random();
      const refreshTime = 1000*10;
 
     function takesuser(name,token){
-    this.username=name;
+    this.username = name;
     this.refreshToken = token;    }
 
      const newuser = new takesuser(props,token);
@@ -24,9 +24,9 @@ function updateToken(){
  setTimeout(updateToken , refreshTime);
  }
 
-function validateToken(){
+export function validateToken(){
   const curToken = localStorage.getItem("cur_token");
   if(curToken === 0){
-    return <p>Sorry token is expired , request again</p>
+    return false;
   }
 }
