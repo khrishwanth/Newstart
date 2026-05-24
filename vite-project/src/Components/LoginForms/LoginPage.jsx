@@ -24,12 +24,13 @@ export default function Login(){
       console.log("yes");
       const userdetails = user_db.find(u => u.user === user);
       if(!user_db.includes(userdetails)){
-           navigate("./Register");
+           navigate("/register");
            console.log("if");
       }
       else{
         console.log("else");
         GenerateToken(userdetails.user);
+        navigate("/data");
       }
     }
     

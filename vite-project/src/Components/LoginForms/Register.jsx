@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function RegisterNewUser(){
     const[user,setUser] = useState("");
     const[pswd ,setPswd] = useState("");
-    const[result,setresult] = usestate('');
+    const[result,setresult] = useState('');
 
     function handleuser(e){
         setUser(e.target.value);
